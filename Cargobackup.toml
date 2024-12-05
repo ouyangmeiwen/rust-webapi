@@ -24,7 +24,7 @@ prost-types = "0.12.3"
 warp = "0.3.6"
 
 axum = "0.7.5"
-axum-extra = { version = "0.9.3", features = ["typed-header"] }
+axum-extra = { version = "0.9.3", features = ["typed-header"]}
 once_cell = "1.19.0"
 
 rand = "0.8.5"
@@ -51,15 +51,11 @@ tokio-stream = { version = "0.1.15", features = ["net"] }
 async-stream = "0.3.5"
 async-trait = "0.1.79"
 
-# 移除 MySQL 特性
-diesel = { version = "2.1.5", features = ["chrono", "postgres", "sqlite", "r2d2"] }
+diesel = { version = "2.1.5", features = ["chrono", "mysql", "postgres", "sqlite", "r2d2"] }
 r2d2 = "0.8.10"
 
-# 如果你不需要 MySQL，则移除 sqlx 中的 mysql 特性
-sqlx = { version = "0.7.4", features = ["runtime-tokio-rustls", "postgres", "chrono", "migrate", "uuid", "json"], default-features = false }
-
-# sea-orm 配置，去掉 mysql 特性
-sea-orm = { version = "0.12.15", features = ["sqlx-postgres", "runtime-tokio-rustls", "macros", "debug-print", "with-chrono"], default-features = false }
+sqlx = { version = "0.7.4", features = [ "runtime-tokio-rustls" , "postgres", "chrono", "migrate", "uuid", "json"], default-features = false }
+sea-orm = { version = "0.12.15", features = [ "sqlx-postgres", "runtime-tokio-rustls", "macros", "debug-print", "with-chrono" ], default-features = false }
 
 [build-dependencies]
 tonic-build = { version = "0.11.0", features = ["prost"] }

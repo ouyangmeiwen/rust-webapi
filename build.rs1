@@ -1,0 +1,12 @@
+fn main() {
+    // 配置 MySQL 客户端库的路径
+    println!("cargo:rustc-link-search=native=D:/install/MySQL Server 8.0/lib");
+
+    // 配置头文件的路径
+    println!("cargo:include=D:/install/MySQL Server 8.0/include");
+
+    // 链接 MySQL 客户端库
+    println!("cargo:rustc-link-lib=static=mysqlclient");  // 如果是静态链接
+    // 或者如果是动态链接：
+    // println!("cargo:rustc-link-lib=dylib=mysqlclient");  // 如果使用 DLL
+}
