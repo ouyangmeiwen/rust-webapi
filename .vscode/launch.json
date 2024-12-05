@@ -1,212 +1,22 @@
 {
-    // 使用 IntelliSense 了解相关属性。 
-    // 悬停以查看现有属性的描述。
-    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "lldb",
+            "type": "lldb",  // 或者 gdb，如果你在使用 Linux 或 macOS
             "request": "launch",
-            "name": "Debug unit tests in library 'rwebapi'",
+            "name": "Debug executable 'actix' with cargo run",
             "cargo": {
                 "args": [
-                    "test",
-                    "--no-run",
-                    "--lib",
-                    "--package=rwebapi"
-                ],
-                "filter": {
-                    "name": "rwebapi",
-                    "kind": "lib"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug executable 'actix'",
-            "cargo": {
-                "args": [
-                    "build",
+                    "run",
                     "--bin=actix",
                     "--package=rwebapi"
-                ],
-                "filter": {
-                    "name": "actix",
-                    "kind": "bin"
-                }
+                ]
             },
             "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug unit tests in executable 'actix'",
-            "cargo": {
-                "args": [
-                    "test",
-                    "--no-run",
-                    "--bin=actix",
-                    "--package=rwebapi"
-                ],
-                "filter": {
-                    "name": "actix",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug executable 'axum'",
-            "cargo": {
-                "args": [
-                    "build",
-                    "--bin=axum",
-                    "--package=rwebapi"
-                ],
-                "filter": {
-                    "name": "axum",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug unit tests in executable 'axum'",
-            "cargo": {
-                "args": [
-                    "test",
-                    "--no-run",
-                    "--bin=axum",
-                    "--package=rwebapi"
-                ],
-                "filter": {
-                    "name": "axum",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug executable 'insert_users'",
-            "cargo": {
-                "args": [
-                    "build",
-                    "--bin=insert_users",
-                    "--package=rwebapi"
-                ],
-                "filter": {
-                    "name": "insert_users",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug unit tests in executable 'insert_users'",
-            "cargo": {
-                "args": [
-                    "test",
-                    "--no-run",
-                    "--bin=insert_users",
-                    "--package=rwebapi"
-                ],
-                "filter": {
-                    "name": "insert_users",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug executable 'sample'",
-            "cargo": {
-                "args": [
-                    "build",
-                    "--bin=sample",
-                    "--package=rwebapi"
-                ],
-                "filter": {
-                    "name": "sample",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug unit tests in executable 'sample'",
-            "cargo": {
-                "args": [
-                    "test",
-                    "--no-run",
-                    "--bin=sample",
-                    "--package=rwebapi"
-                ],
-                "filter": {
-                    "name": "sample",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug executable 'warp'",
-            "cargo": {
-                "args": [
-                    "build",
-                    "--bin=warp",
-                    "--package=rwebapi"
-                ],
-                "filter": {
-                    "name": "warp",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug unit tests in executable 'warp'",
-            "cargo": {
-                "args": [
-                    "test",
-                    "--no-run",
-                    "--bin=warp",
-                    "--package=rwebapi"
-                ],
-                "filter": {
-                    "name": "warp",
-                    "kind": "bin"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "RUST_BACKTRACE": "1"  // 可选，显示详细的错误信息
+            }
         }
     ]
 }

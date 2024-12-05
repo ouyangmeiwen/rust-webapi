@@ -7,7 +7,7 @@ pub struct HealthResponse {
     pub status: String,
     pub version: String,
 }
-
+//http://127.0.0.1:8000/health
 pub async fn health() -> impl Responder {
     web::Json(HealthResponse {
         status: "ok".into(),
